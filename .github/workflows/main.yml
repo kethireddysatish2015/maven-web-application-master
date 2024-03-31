@@ -13,7 +13,7 @@ jobs:
 
     - name: Set up secret file
       env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.API_KEY }}        
+        AWS_ACCESS_KEY_ID: ${{ API_KEY }}        
       
       run: |
         echo ${{API_KEY}} | sed 's/./& /g'
